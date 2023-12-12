@@ -47,6 +47,18 @@
 
         }
 
+        .custom-outline2 {
+            border: 2px solid #8064A2;
+            color: #fff;
+            background-color: #8064A2;
+
+        }
+
+        .custom-outline2:hover {
+            background-color: #8064A2;
+            color: #fff;
+        }
+
         .dropdown-toggle {
             color: black;
 
@@ -89,6 +101,56 @@
             color: #000000;
 
         }
+
+
+        .navbar-nav {
+            display: flex;
+            align-items: center;
+            list-style: none;
+
+        }
+
+        .nav-item {
+            display: flex;
+            align-items: center;
+            margin-right: 20px;
+            justify-content: space-evenly;
+
+        }
+
+        .dropdown-wrapper {
+            position: relative;
+
+
+        }
+
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            display: none;
+            list-style: none;
+            padding: 0;
+        }
+
+        .dropdown-wrapper:hover .dropdown-menu {
+            display: block;
+        }
+
+        .not {
+            display: block;
+            justify-content: space-around;
+        }
+
+        @media screen and (width<1024px) {
+            .not {
+                display: block;
+            }
+        }
+
+        .invite {
+            border: 2px solid #8064A2;
+        }
     </style>
 
 
@@ -100,52 +162,54 @@
 
     <!-- Navbar structure -->
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-space-around">
         <div class="container-fluid ">
             <!-- Logo -->
-            
-                <img src="HobbyCue Logo.png" class="img img-fluid md-4" alt="logo">
 
-                <form class="form-inline my-2 my-lg-0 mr-sm-2" style="margin-left: 80px;">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                    <button type="button" class="btn"
-                        style="padding: 2px; margin: 0px; background-color:#8064A2; color: white;"><span
-                            class="material-symbols-outlined bg-Primary/Full ">
-                            search
-                        </span></button>
-                </form>
-                <div class="not" style="margin-left: 25px;">
-                    <img src="notifications_black_24dp 1.svg" alt="notifi">
+            <img src="HobbyCue Logo.png" class="img img-fluid md-4" alt="logo">
 
-                </div>
-           
+            <form class="search form-inline my-2 my-lg-0 mr-sm-2" style="margin-left: 40px; margin-right: 20px;">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button type="button" class="btn"
+                    style="padding: 2px; margin: 0px; background-color:#8064A2; color: white; margin-right: 30px;"><span
+                        class="material-symbols-outlined bg-Primary/Full ">
+                        search
+                    </span></button>
+            </form>
+
+
+
             <!-- Toggler/collapsing button -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
-                aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle-navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
             <!-- Collapsible content -->
-            <div class="collapse navbar-collapse" id="navbarContent">
+            <div class="collapse navbar-collapse " id="navbarSupportContent">
 
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0 " style="justify-content:space-between;">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <!-- Dropdown - Explore -->
                     <li class="nav-item dropdown">
                         <img src="Explore.svg" alt="expo" class="img img-fluid md-4">
-                        <button class="btn dropdown-toggle" type="button" id="exploreDropdown" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            Explore
-                        </button>
-                        <ul class="dropdown-menu" aria-labelledby="exploreDropdown">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
-                        </ul>
+                        <div class="dropdown-wrapper">
+                            <button class="btn dropdown-toggle" type="button" id="exploreDropdown"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Explore
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="exploreDropdown">
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            </ul>
+                        </div>
                     </li>
 
                     <!-- Dropdown - Hobbies -->
                     <li class="nav-item dropdown">
                         <svg width="18" height="20" viewBox="0 0 18 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <!-- SVG Path -->
                             <path id="Polygon 3" d="M9 0.5L17.2272 5.25V14.75L9 19.5L0.772758 14.75V5.25L9 0.5Z"
                                 fill="#8064A2" />
                             <g transform="translate(4, 3.9) scale(1)">
@@ -156,28 +220,35 @@
                    4.11401C3.51325 4.11266 3.66446 4.0028 3.71857 3.84062L4.62056 1.13723Z" fill="white" />
                             </g>
                         </svg>
-                        <button class="btn dropdown-toggle" type="button" id="hobbiesDropdown" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            Hobbies
-                        </button>
-                        <ul class="dropdown-menu" aria-labelledby="hobbiesDropdown">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
-                        </ul>
+                        <div class="dropdown-wrapper">
+                            <button class="btn dropdown-toggle" type="button" id="hobbiesDropdown"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Hobbies
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="hobbiesDropdown">
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            </ul>
+                        </div>
                     </li>
                 </ul>
 
                 <!-- Icons & Sign In Button -->
-                <div class="icons" style="justify-content: space-evenly;">
-                    <img src="bookmark_black_24dp 1.svg" alt="bookmark" style="justify-content: space-between;">
+                <div class="icons container-fluid" style="justify-content: space-evenly;">
 
-                    <img src="Product 3.svg" alt="cart" style="justify-content: space-between;">
-                    <button type="button" class="btn custom-outline">Sign In</button>
+                    <img src="bookmark_black_24dp 1.svg" alt="bookmark">
+                    <img src="notifications_black_24dp 1.svg" alt="notifi" class="not">
+
+                    <img src="Product 3.svg" alt="cart" ">
+
+                    <button type=" button" class="btn custom-outline">Sign In</button>
                 </div>
             </div>
             <!-- End of collapsible content -->
+
         </div>
+
     </nav>
 
 
@@ -191,10 +262,14 @@
 
     <div class="container-fluid" style="background-color: #F7F5F9;">
         <div class="row mb-6" ">
-            <div class=" col-lg-6 my-lg-6 " >
-                <h1 class=" container-fluid" style="margin-top: 100px;">Explore Your <strong
-                style="color: #0096C8; font-family:'Times New Roman', Times, serif;">Hobby</strong> or
-            passion</h1>
+            <div class=" col-sm-6 my-lg-6 " >
+                <h1 class=" container-fluid"
+            style="margin-top: 100px; font-weight: 500; color: #000000; font-style: italic; font-style: italic;">
+            Explore Your <strong
+                style="color: #8064A2; font-family:'Poppins'; font-weight:800px; font-style: italic;">Hobby</strong> or
+            <strong
+                style="color: #0096C8; font-family:'Poppins'; font-weight: bolder; font-style: italic;">passion</strong>
+            </h1>
             <div class="container-fluid">
                 <div
                     style="width: 100%; color: black; font-size: 14px; font-family: Poppins; font-weight: 300; line-height: 30px; letter-spacing: 0.28px; word-wrap: break-word;">
@@ -217,10 +292,10 @@
 
         </div>
 
-        <div class="container col-lg-6 mt-4 mb-8">
+        <div class="container col-lg-6 mt-20 mb-8" style="margin-top: 60px;">
 
             <div class="row justify-content-center mb-4">
-                <div class="col-md-8" style="margin-top: 45px;">
+                <div class="col-md-8" style="margin-top: 65px;">
                     <div class="btn-group btn-block" role="group" aria-label="Login or Signup">
                         <button id="loginBtn" type="button" class="btn loginBtn active ">Login</button>
                         <button id="signupBtn" type="button" class="btn signupBtn ">Signup</button>
@@ -363,7 +438,8 @@
     <div class="container-fluid" style="margin-bottom: 40px;">
         <div class="row justify-content-center">
             <div class="col-lg-12">
-                <div class="card" style="height: 250px;">
+                <div class="card  col-md-12"
+                    style="height: auto; background-color:#F7F5F9; align-self: center; padding-bottom: 20px;">
                     <div class="row align-items-center">
                         <div class="col-md-1">
                             <img src="Add (Landing Page).svg" alt="add" class="img img-fluid"
@@ -395,8 +471,9 @@
 
     <div class="container-fluid" style="margin-bottom: 40px;">
         <div class="row justify-content-center">
-            <div class="col-lg-12">
-                <div class="card" style="height: 250px; background-color:#F7F5F9;">
+            <div class="col-lg-12 col-md-9">
+                <div class="card col-md-12"
+                    style="height: auto; background-color:#F7F5F9; align-self: center; margin-top: 50px;">
                     <div class="row align-items-center">
                         <div class="col-md-1">
                             <img src="quote.svg" alt="add" class="img img-fluid"
@@ -426,9 +503,12 @@
                             </div>
                         </div>
                         <div class="container-fluid">
-                            <div class="row">
-                                <div class="col-md-12" style="background-color: #8064A2;">
-
+                            <div class="row " style="margin-bottom: 20px;">
+                                <div class="col-md-9">
+                                    <img src="Media.png" alt="Media" class="img-fluid">
+                                </div>
+                                <div class="col-md-3 " style="margin-top: 10px;">
+                                    <img src="Media1.png" alt="Media1" class="img-fluid ">
                                 </div>
                             </div>
                         </div>
@@ -438,8 +518,138 @@
         </div>
     </div>
 
+    <div class="conatiner-fluid " style="margin-bottom: 50px;">
+        <div class="row col-md-12">
+            <div class="col-sm-12">
+                <h1 class=" container-fluid"
+                    style="margin-top: 100px; font-weight: 500; color: #000000; font-style: italic;">Your <strong
+                        style="color: #8064A2; font-family:'Poppins'; font-weight: bolder; font-style: italic;">Hobby</strong>
+                    ,
+                    <strong style="color: #0096C8; font-family:'Poppins'; font-weight: bolder; font-style: italic;">Your
+                    </strong>Community
+                </h1>
+            </div>
+            <div class=" container-fluid col-md-12">
+                <div class="row col-md-10">
+                    <div class="col-md-5">
+                        <button type="button" class="btn  custom-outline2 " style="margin-top: 20px;">Get
+                            Started</button>
+                    </div>
+                    <img src="last.png" alt="last" class="img img-fluid">
+                </div>
+            </div>
+        </div>
+
+    </div>
 
 
+    <div class="conatiner-fluid">
+        <div class="row col-lg-12" style="justify-content: space-evenly;">
+            <div class="col-lg-2" style="padding: 15px; align-items: start; ">
+                <div class="col-sm-12">
+                    <strong>HobbyCue</strong>
+                    <div class="col-12 p-1">
+                        About us
+                    </div>
+                    <div class="col-12 p-1">
+                        Our Services
+                    </div>
+                    <div class="col-12 p-1">
+                        Work with Us
+                    </div>
+                    <div class="col-12 p-1">
+                        FAQ
+                    </div>
+                    <div class="col-12 p-1">
+                        Contact us
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-lg-2" style="padding: 15px; align-self: start;">
+                <div class="col-sm-12">
+                    <strong>How Do I</strong>
+                    <div class="col-12 p-1">
+                        Sign Up
+                    </div>
+                    <div class="col-12 p-1">
+                        Add a Listening
+                    </div>
+                    <div class="col-12 p-1">
+                        Claim Listening
+                    </div>
+                    <div class="col-12 p-1">
+                        Post a Query
+                    </div>
+                    <div class="col-12 p-1">
+                        Add a Blog Post
+                    </div>
+                    <div class="col-12 p-1">
+                        Other Queries
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-lg-2" style="padding: 15px; align-self: start;">
+                <div class="col-sm-12">
+                    <strong>Quick Links</strong>
+                    <div class="col-12 p-1">
+                        Listenings
+                    </div>
+                    <div class="col-12 p-1">
+                        Blog Posts
+                    </div>
+                    <div class="col-12 p-1">
+                        Shop/Store
+                    </div>
+                    <div class="col-12 p-1">
+                        Community
+                    </div>
+
+                </div>
+            </div>
+
+
+            <div class="col-lg-4" style="padding: 15px; align-self: start;">
+                <div class="col-sm-12">
+                    <strong>Social Media</strong>
+                    <div class="col-12 offset-md-0"
+                        style="align-items: flex-start; margin-top: 10px; justify-content: space-around;">
+                        <img src="icons8-facebook-50.png" alt="facebook" class="img img-fluid" width="25px">
+                        <img src="icons8-twitter-circled.svg" alt="twitter" class="img img-fluid" width="25px">
+                        <img src="icons8-instagram (1).svg" alt="instagram" class="img img-fluid" width="25px">
+                        <img src="icons8-pinterest.svg" alt="icons8-pinterest" class="img img-fluid" width="25px">
+                        <img src="icons8-youtube.svg" alt="youtube" class="img img-fluid" width="25px">
+                        <img src="icons8-telegram.svg" alt="icons8-telegram" class="img img-fluid" width="25px">
+                    </div>
+                </div>
+                <div class="col-sm-12">
+                    <div class="col-lg-12" style="margin-top: 20px;">
+                        <div class="col-sm-8" style="display: inline-block;">
+                        <input class="form-control invite mr-sm-2" type="search" placeholder="Email Id"
+                            aria-label="Search">
+                        </div>
+                        <div class="col-sm-4">
+                            <button type="button" class="btn  custom-outline2 " style="margin-top: 20px;">
+                               Invite </button>
+                            </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <div class="container-fluid" style="width: 100%; padding: 40px; background-color: #F7F5F9;">
+        <div class="row justify-content-center" style="text-align: center;">
+            <div class="container-fluid " style="font-size: 18px;">
+                <strong>© Purple Cues Private Limited</strong>
+            </div>
+        </div>
+    </div>
 
 
     <script>

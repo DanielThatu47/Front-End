@@ -12,3 +12,4 @@ let signup = document.querySelector(".signup");
                 slider.classList.remove("moveslider");
                 formSection.classList.remove("form-section-move");
             });
+          

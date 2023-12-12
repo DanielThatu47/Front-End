@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Navbar</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Custom styles */
+        .navbar {
+            background-color: #ffffff;
+        }
+
+        .navbar-brand img {
+            width: 150px;
+            height: auto;
+        }
+
+        .navbar-toggler {
+            border: none;
+        }
+
+        .navbar-toggler:focus {
+            outline: none;
+        }
+
+        .navbar-nav .nav-link {
+            color: #000000;
+            font-size: 14px;
+            font-weight: 500;
+            padding: 10px 15px;
+        }
+
+        .dropdown-menu {
+            background-color: #ffffff;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .dropdown-item {
+            color: #000000;
+        }
+
+        .btn-signin {
+            background-color: #8064A2;
+            color: #ffffff;
+            font-weight: 600;
+            margin-left: 10px;
+        }
+
+        @media (max-width: 992px) {
+            .navbar .search-icon,
+            .navbar .bell-icon,
+            .navbar .dropdown {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-md navbar-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="https://via.placeholder.com/293x60" alt="Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Dropdown 1</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Dropdown 2</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-bell bell-icon"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Notification 1</a></li>
+                            <li><a class="dropdown-item" href="#">Notification 2</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item d-md-none">
+                        <a class="nav-link search-icon" href="#">
+                            <i class="fas fa-search"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <button class="btn btn-signin d-md-none">Sign In</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script>
+        // JavaScript to handle visibility based on device size
+        // window.addEventListener('resize', function () {
+        //     if (window.innerWidth < 992) { // Medium devices and below
+        //         document.querySelectorAll('.d-md-none').forEach(element => {
+        //             element.style.display = 'inline-block';
+        //         });
+        //         document.querySelectorAll('.d-md-flex').forEach(element => {
+        //             element.style.display = 'none';
+        //         });
+        //     } else {
+        //         document.querySelectorAll('.d-md-none').forEach(element => {
+        //             element.style.display = 'none';
+        //         });
+        //         document.querySelectorAll('.d-md-flex').forEach(element => {
+        //             element.style.display = 'inline-block';
+        //         });
+        //     }
+        // });
+
+        // // Trigger resize event on page load
+        // window.dispatchEvent(new Event('resize'));
+    </script>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
