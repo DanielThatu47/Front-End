@@ -175,13 +175,25 @@
             background-color: #352049;
             /* Change the background color when active/pressed */
         }
+
+        .container-fluid {
+    display: flex;
+    flex-direction: column; /* By default, items will stack vertically */
+}
+
+@media (max-width: 767px) {
+    .container-fluid{
+        /* For mobile devices with width up to 767px */
+        flex-direction: column; /* Ensure items stack vertically */
+    }
+}
     </style>
 
 
 
 </head>
 
-<body sm-6 md-8 lg-12>
+<body>
 
 
     <!-- Navbar structure -->
